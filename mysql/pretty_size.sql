@@ -6,7 +6,7 @@ CREATE FUNCTION pretty_size( size DOUBLE )
 BEGIN
 	DECLARE c INT DEFAULT 0;
 	DECLARE unit INT DEFAULT 1000;
-	DECLARE unitChar CHAR(8) DEFAULT 'KMGTPEZY';
+	DECLARE unitChar CHAR(6) DEFAULT 'KMGTPE';
 	DECLARE binaryPrefix BOOLEAN DEFAULT 1;
 
 	/* Set binaryPrefix = 1 to use binary unit & prefix */
@@ -15,7 +15,7 @@ BEGIN
 		SET unit = 1024;
 	END IF;
 
-	WHILE size >= unit AND c < 7 DO
+	WHILE size >= unit AND c < 6 DO
 		SET size = size / unit;
 		SET c = c + 1;
 	END WHILE;
