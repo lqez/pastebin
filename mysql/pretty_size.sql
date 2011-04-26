@@ -15,22 +15,17 @@ BEGIN
 		SET unit = 1024;
 	END IF;
 
-	WHILE size >= unit AND c < 6 DO
+	WHILE size >= unit AND c < 7 DO
 		SET size = size / unit;
 		SET c = c + 1;
 	END WHILE;
 
-	/* Under 1K, just add 'Byte(s)' */
-	IF c = 0 THEN
-		RETURN CONCAT( size, ' B' );
-	END IF;
-
-	/* Modify as your taste */
 	RETURN CONCAT(
-		FORMAT( size, 2 ),
+		IF( c, FORMAT( size, 2 ), size ),
 		' ',
 		SUBSTR( unitChar, c, 1 ),
-		IF( binaryPrefix, 'iB', 'B' )
+		IF( binaryPrefix AND c, 'i', '' ),
+		'B'
 		);
 END $$
 
