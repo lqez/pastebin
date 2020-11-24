@@ -18,4 +18,4 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #PgDn::SoundSet,-1           ; Win + PageDown        to Volumn down
 #End::SoundSet,+1,,mute      ; Win + End             to Toggle mute
 
-#^L::DllCall("PowrProf\SetSuspendState", "int", 1, "int", 1, "int", 1) ; Win + Shift + L to Suspend
+#^L::DllCall("PowrProf\SetSuspendState", "int", 1, "int", 1, "int", 1) ; Win + Ctrl + L to Suspend
