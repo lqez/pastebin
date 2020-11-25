@@ -14,7 +14,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #{::“                        ; Win + Shift + [       to Opening double quote
 #}::”                        ; Win + Shift + ]       to Closing double quote
 
-#PgUp::SoundSet,+1           ; Win + PageDown        to Volumn up
+#PgUp::SoundSet,+1           ; Win + PageUp          to Volumn up
 #PgDn::SoundSet,-1           ; Win + PageDown        to Volumn down
 #End::SoundSet,+1,,mute      ; Win + End             to Toggle mute
 
